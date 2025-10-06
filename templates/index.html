@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Iris Flower Prediction</title>
+</head>
+<body>
+    <h2>Iris Flower Species Predictor</h2>
+
+    {% if prediction %}
+        <h3>Prediction Result: <span style="color:green">{{ prediction }}</span></h3>
+        <a href="/">Make another prediction</a>
+    {% else %}
+        <form method="POST" action="/">
+            <label>Sepal Length:</label>
+            <input type="text" name="sepal_length" required><br><br>
+
+            <label>Sepal Width:</label>
+            <input type="text" name="sepal_width" required><br><br>
+
+            <label>Petal Length:</label>
+            <input type="text" name="petal_length" required><br><br>
+
+            <label>Petal Width:</label>
+            <input type="text" name="petal_width" required><br><br>
+
+            <input type="submit" value="Predict">
+        </form>
+    {% endif %}
+</body>
+</html>
